@@ -11,12 +11,22 @@ import jakarta.persistence.Table;
 @Entity
 @Table(schema = "DB_DEFAULT", name = "USUARIO")
 public class Usuario extends PanacheEntityBase {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cpf;
     @Column(name = "nome_completo")
     private String nomeCompleto;
+    @Column(name = "user_name")
+    private String userName;
+    
+    public String getUserName() {
+        return userName;
+    }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
     private String senha;
 
     public Long getId() {
