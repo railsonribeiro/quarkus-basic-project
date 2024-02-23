@@ -4,6 +4,7 @@ import org.acme.dto.UsuarioDTO;
 import org.acme.service.UsuarioService;
 
 import jakarta.annotation.security.PermitAll;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -28,6 +29,7 @@ public class UsuarioResource {
         return Response.noContent().build();
     }
 
+    @RolesAllowed("admin")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarUsuarios() {
