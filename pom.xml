@@ -30,13 +30,15 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
-    <!-- segurança -->
+    <!-- segurança/autenticação -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-security-jpa</artifactId>
       <version>3.8.0.CR1</version>
     </dependency>
+    <!-- fim segurança -->
 
+    <!-- banco de dados -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-vertx</artifactId>
@@ -54,6 +56,15 @@
       <artifactId>quarkus-jdbc-h2</artifactId>
       <version>3.6.6</version>
     </dependency>
+    <!-- fim banco de dados -->
+
+    <!-- Rest -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jsonb</artifactId>
+      <version>3.8.0</version>
+    </dependency>
+
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-rest-client</artifactId>
@@ -62,27 +73,27 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-jackson</artifactId>
     </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-arc</artifactId>
-    </dependency>
+     <!-- fim Rest -->
 
+    <!-- Testes unitários -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-junit5</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- fim Testes unitários -->
+
+    <!-- Testes de integração -->
     <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
     </dependency>
+     <!-- fim Testes de integração -->
 
-    <dependency>
-      <groupId>jakarta.servlet</groupId>
-      <artifactId>jakarta.servlet-api</artifactId>
-      <version>6.0.0</version>
-      <scope>provided</scope>
+     <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-arc</artifactId>
     </dependency>
 
   </dependencies>
