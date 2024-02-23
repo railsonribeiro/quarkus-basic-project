@@ -20,12 +20,7 @@ CREATE TABLE IF NOT EXISTS DB_DEFAULT.ORDEM
   preco DECIMAL
 );
 
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-01', 'Jose', 'jose2016', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-02', 'Jose', 'jose2017', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-03', 'Jose', 'jose2018', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-04', 'Jose', 'jose2019', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-05', 'Jose', 'jose2020', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-07', 'Jose', 'jose2021', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-08', 'Jose', 'jose2022', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-09', 'Jose', 'jose2023', 'senha', 'usuario_comum');
-INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-10', 'Jose', 'jose2024', 'senha', 'usuario_comum');
+INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-01', 'Bobby Fischer', 'admin_first', '$2a$10$EIS6vWDtMROa7.vJbYzoqeMzDm1WfvYsVwGAJEc8JDekyzfEEPol.', 'admin');
+INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-02', 'Joao Nascimento', 'joaonascimento2024', '$2a$10$8yo9nVRQpoubQAIIb2oatu354BqH0VpED3BVTBspviXo9d4N5SYSC', 'usuario_comum');
+INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-03', 'Ana Barros', 'ana2024', '$2a$10$D/1FFC2Wf/8UhN/SdMLG0OhE.BxDDegaCHjZCTcD9rmTD4d6C9ety', 'usuario_comum');
+INSERT INTO DB_DEFAULT.USUARIO(cpf, nome_completo, user_name, senha, role_acess) VALUES ('000000000-04', 'Augusto', 'augusto2019', '$2a$10$durTFMMSFS39kpMNPr1bnuS/9k4ToGEOm0Q3dz1hQG4LyV09P4JEK', 'usuario_comum');
