@@ -3,6 +3,7 @@ package org.acme.resource;
 import org.acme.dto.OrdemDTO;
 import org.acme.service.OrdemService;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -18,6 +19,7 @@ public class OrdemResource {
     @Inject
     OrdemService service;
 
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarOrders() {
@@ -25,6 +27,7 @@ public class OrdemResource {
 
     }
 
+    @RolesAllowed("usuario_comum")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

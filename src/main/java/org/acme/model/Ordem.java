@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import org.acme.enums.StatusTransacaoEnum;
 import org.acme.enums.TransacaoEnum;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "DB_DEFAULT", name = "ORDEM")
-public class Ordem {
+public class Ordem extends PanacheEntityBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -17,15 +17,8 @@ public class UsuarioService {
     UsuarioRepository repository;
 
     @Transactional
-    public Usuario criarUsuario(UsuarioDTO usr) {
-        var usuario = new Usuario();
-        usuario.setCpf(usr.getCpf());
-        usuario.setNomeCompleto(usr.getNomeCompleto());
-        usuario.setUserName(usr.getUserName());
-        usuario.setSenha(usr.getPasswordUser());
-        Usuario.persist(usuario);
-
-        return usuario;
+    public void criarUsuario(UsuarioDTO usr) {
+        Usuario.add(usr);
     }
 
     @Transactional

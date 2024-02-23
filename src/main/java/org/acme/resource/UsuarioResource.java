@@ -2,6 +2,8 @@ package org.acme.resource;
 
 import org.acme.dto.UsuarioDTO;
 import org.acme.service.UsuarioService;
+
+import jakarta.annotation.security.PermitAll;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -17,19 +19,19 @@ public class UsuarioResource {
     @Inject
     UsuarioService service;
 
+    @PermitAll
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response criarUsuario(UsuarioDTO usr) {
-        return Response.ok(service.criarUsuario(usr)).build();
-   
+        service.criarUsuario(usr);
+        return Response.noContent().build();
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarUsuarios() {
         return Response.ok(service.listarUsuarios()).build() ;
-   
     }
 
 }

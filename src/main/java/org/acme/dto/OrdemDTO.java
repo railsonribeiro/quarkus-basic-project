@@ -2,7 +2,7 @@ package org.acme.dto;
 
 import java.math.BigDecimal;
 public class OrdemDTO {
- 
+    // TODO: Este campo já está indo na autenticação, ver formas de pegar esse valor pela própria autenticação, mas ele ainda deve ser persistido no bd;
     private String userName;
     private String transacao;
     private BigDecimal preco;

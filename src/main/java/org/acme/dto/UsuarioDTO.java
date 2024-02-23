@@ -6,7 +6,6 @@ public class UsuarioDTO {
     private String passwordUser;
     private String nomeCompleto;
     
-    
     public String getCpf() {
         return cpf;
     }
@@ -32,5 +31,4 @@ public class UsuarioDTO {
         this.nomeCompleto = nomeCompleto;
     }
 
-    
 }
