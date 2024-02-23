@@ -22,6 +22,8 @@ public class Ordem extends PanacheEntityBase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    // TODO: Refatorar o DER em relação a inserir o user_name como chave estrangeira na tabela de Ordem
+    // TODO: Analisar ainda a possibilidade de usar chaves compostas também
     @Column(name = "user_name")
     private String userName;
     @Column(name = "data_criacao")
