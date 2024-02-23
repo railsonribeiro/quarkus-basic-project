@@ -12,6 +12,7 @@ import org.acme.repository.OrdemRepository;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.core.SecurityContext;
 
 @RequestScoped
 public class OrdemService {
@@ -19,11 +20,13 @@ public class OrdemService {
     @Inject
     OrdemRepository repository;
 
+    // TODO: Tratar casos de exceção: preço negativo, transacaoEnum invalido, etc
+
     @Transactional
-    public void inserir(OrdemDTO ordemDTO) {
+    public void inserir(SecurityContext sc, OrdemDTO ordemDTO) {
         var ordem = new Ordem();
         ordem.setDataCriacao(LocalDate.now());
-        ordem.setUserName(ordemDTO.getUserName());
+        ordem.setUserName(sc.getUserPrincipal().getName());
         ordem.setPreco(ordemDTO.getPreco());
         ordem.setTransacaoEnum(TransacaoEnum.valueOf(ordemDTO.getTransacao().toUpperCase()));
         ordem.setStatusTransacaoEnum(StatusTransacaoEnum.EM_ANDAMENTO);
@@ -33,6 +36,7 @@ public class OrdemService {
             ordem.setStatusTransacaoEnum(StatusTransacaoEnum.PROCESSADA);
         } catch (Exception e) {
             ordem.setStatusTransacaoEnum(StatusTransacaoEnum.CANCELADA);
+            repository.persist(ordem);
         }
     }
 

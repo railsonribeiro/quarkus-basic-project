@@ -9,6 +9,7 @@ import io.quarkus.security.jpa.Password;
 import io.quarkus.security.jpa.Roles;
 import io.quarkus.security.jpa.UserDefinition;
 import io.quarkus.security.jpa.Username;
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +21,8 @@ import jakarta.persistence.Table;
 @UserDefinition
 @Table(schema = "DB_DEFAULT", name = "USUARIO")
 public class Usuario extends PanacheEntityBase {
+
+    
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,7 +46,6 @@ public class Usuario extends PanacheEntityBase {
         this.userName = userName;
     }
 
-
     public Long getId() {
         return id;
     }
@@ -62,6 +64,8 @@ public class Usuario extends PanacheEntityBase {
     public void setNomeCompleto(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
     }
+
+    @JsonbTransient
     public String getSenha() {
         return senha;
     }
