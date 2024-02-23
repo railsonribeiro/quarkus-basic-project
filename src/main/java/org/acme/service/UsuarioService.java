@@ -4,27 +4,26 @@ import java.util.List;
 
 import org.acme.dto.UsuarioDTO;
 import org.acme.model.Usuario;
+import org.acme.repository.UsuarioRepository;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 @RequestScoped
 public class UsuarioService {
 
-    @Transactional
-    public Usuario criarUsuario(UsuarioDTO usr) {
-        var usuario = new Usuario();
-        usuario.setCpf(usr.getCpf());
-        usuario.setNomeCompleto(usr.getUsername());
-        usuario.setSenha(usr.getPasswordUser());
-        Usuario.persist(usuario);
+    @Inject
+    UsuarioRepository repository;
 
-        return usuario;
+    @Transactional
+    public void criarUsuario(UsuarioDTO usr) {
+        Usuario.add(usr);
     }
 
     @Transactional
     public List<Usuario> listarUsuarios() {
-        return Usuario.listAll();
+        return repository.listAll();
     }
 
 }
